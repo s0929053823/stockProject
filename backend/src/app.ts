@@ -64,7 +64,7 @@ interface ApiError extends Error {
     code?: string;
 }
 
-app.use((err: ApiError, req: Request, res: Response, next: NextFunction) => {
+app.use((err: ApiError, req: Request, res: Response) => {
     console.error('Error:', err);
 
     const statusCode = err.statusCode || 500;
